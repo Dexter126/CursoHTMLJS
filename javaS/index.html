@@ -1,32 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-    <body>
-        <h2>Iniciar Sesion</h2>
-        <form>
-            <input type="text" placeholder=usuario id="usuario"/>
-            <input type="password" placeholder="password" name="" id="passw"/>
-            <button onclick="login()">Entrar</button>
-        </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogIn</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="body-login">
+    <div class="frame">
+      <h1>Iniciar sesión</h1>
 
-        <script>
-            function login(){
-                let usuario=document.getElementById("usuario").value;
-                let passw=document.getElementById("passw").value;
+      <div class="login">
+        <input type="text" placeholder="Nombre" id="usuario" />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          name=""
+          id="contraseña"
+        />
+        <button onclick="login()">Entrar</button>
+      </div>
+    </div>
 
-                let usuariogGuardado="admin";
-                let passwGuardada="1234";
+    <script>
+      function login() {
+        let usuario = document.getElementById("usuario").value;
+        let contraseña = document.getElementById("contraseña").value;
 
-                if(usuario===usuariogGuardado && passw===passwGuardada){
-                    window.location.href("calculadora.html");
-                }else{
-                    document.getElementById("mensaje").textContent="Usuario y Contraseña incorrectos";
-                }
-                document.getElementById("usuario").value="";
-                document.getElementById("passw").value="";
-            }
-        </script>
+        let usuarioGuardado = "admin";
+        let contraseñaGuardada = "1234";
 
-    </body>
+        if (usuario == usuarioGuardado && contraseña == contraseñaGuardada) {
+          window.location.href = "calculadora.html";
+        } else {
+          alert("Usuario o contraseña incorrectos");
+        }
+
+        document.getElementById("usuario").value = "";
+        document.getElementById("contraseña").value = "";
+      }
+    </script>
+  </body>
 </html>
