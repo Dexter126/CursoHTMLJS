@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Document</title>
+    <body>
+        <div><h2>Calculadora</h2></div>
+        <div>
+            <input type="number" id="numero1" placeholder="Numero 1"/>
+            <input type="number" id="numero2" placeholder="Numero 2"/>
+            <button onclick="sumar()">+</button>
+            <button onclick="restar()">-</button>
+            <button onclick="multiplicar()">*</button>
+            <button onclick="dividir()">/</button>
+            <p id="resultado"></p>
+        </div>
+    <script>
+        function sumar(){
+            let numero1=parseFloat(document.getElementById("numero1").value);
+            let numero2=parseFloat(document.getElementById("numero2").value);
+
+            let resultado=numero1+numero2;
+
+            document.getElementById("resultado").textContent="El resultado es: "+resultado;
+        }
+
+        function restar(){
+            let numero1=parseFloat(document.getElementById("numero1").value);
+            let numero2=parseFloat(document.getElementById("numero2").value);
+
+            let resultado=numero1-numero2;
+
+            document.getElementById("resultado").textContent="El resultado es: "+resultado;
+        }
+
+        function multiplicar(){
+            let numero1=parseFloat(document.getElementById("numero1").value);
+            let numero2=parseFloat(document.getElementById("numero2").value);
+
+            let resultado=numero1*numero2;
+
+            document.getElementById("resultado").textContent="El resultado es: "+resultado;
+        }
+
+        function dividir(){
+            let numero1=parseFloat(document.getElementById("numero1").value);
+            let numero2=parseFloat(document.getElementById("numero2").value);
+
+            if(numero2!==0){
+                let resultado=numero1/numero2;
+                document.getElementById("resultado").textContent="El resultado es: "+resultado;
+            }else{
+                document.getElementById("resultado").textContent="No se puede dividir por cero";
+            }
+        }
+    </script>
+    </body>
+</html>
